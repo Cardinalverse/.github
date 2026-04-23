@@ -82,6 +82,12 @@ It may depend on other R packages for needed for implementing specialized statis
 
 It should avoid dependencies without a history of sustained maintenance. It should avoid dependencies with system requirements.
 
+#### CardinalOmics
+
+`CardinalOmics` will provide orchestration of multimodal experiments that integrate MSI data.
+
+It may depend on other R packages in the broader Bioconductor ecosystem such as `SpatialExperiment` to support spatial multi-omics. Any *Cardinalverse* functionality that operates on higher-level abstractions of experiments (e.g., `SpatialExperiment`) which may incorporate multiple modalities including MSI should be implemented here, including co-registration and methods for applying functionality from `CardinalStats` to non-*Cardinal* data structures such as `SummarizedExperiment` and `SpatialExperiment`, etc.
+
 <!--
 
 **Here are some ideas to get you started:**
