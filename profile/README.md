@@ -21,7 +21,7 @@ flowchart BT
 
 #### Cardinal
 
-This package is the frontend for MSI-based workflows. It should be a pure R package for easy user installation from source (for providing release previews and hotfixes without requiring compilation).
+`Cardinal` is the frontend for MSI-based workflows. It should be a pure R package for easy user installation from source (for providing release previews and hotfixes without requiring compilation).
 
 It implements the classes most users will manipulate directly, including:
 
@@ -33,6 +33,11 @@ It implements the classes most users will manipulate directly, including:
 
 It depends on `CardinalIO` for I/O, `CardinalCore` for spectral processing and visualization, and `CardinalStats` for statistical learning.
 
+It should avoid dependencies on any packages other than those above and core Bioconductor infrastructure such as `S4Vectors`. It should avoid unnecessary dependencies on core Bioconductor infrastructure that is better handled by `CardinalOmics`.
+
+#### CardinalIO
+
+`CardinalIO` is responsible for reading and writing file formats directly supported by the *Cardinalverse* (i.e., those we implement and maintain ourselves rather than depend on third-party packages or utilities). This is primarily **imzML**. Support for most other formats (such as **HDF5**, **zarr**, **SpatialData**, etc.) should use third-party packages for support.
 
 <!--
 
