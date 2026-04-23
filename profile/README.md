@@ -58,7 +58,7 @@ Examples of appropriate functionality for `CardinalCore` include low-level imple
 - Range searches
 - Visualization
 
-It may include compiled C/C++ for these tasks. Any `Cardinal` functionality that may be tightly coupled with C/C++ code (but is __not__ directly related to statistical modeling or machine learning) should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
+It may include compiled C/C++ for these tasks. Any *Cardinalverse* functionality that may be tightly coupled with C/C++ code (but is __not__ directly related to I/O or statistical modeling or machine learning) should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
 
 It should avoid dependencies on any packages other than `matter`, `ggplot2`, and core Bioconductor infrastructure.
 
@@ -76,7 +76,7 @@ Examples of appropriate functionality for `CardinalCore` include low-level imple
 - Statistical testing
 - Cross-validation
 
-It may include compiled C/C++ for these functions. Any `Cardinal` functionality directly implementing statistical modeling or machine learning *algorithms* should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
+It may include compiled C/C++ for these functions. Any *Cardinalverse* functionality directly implementing statistical modeling or machine learning *algorithms* should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
 
 It may depend on other R packages for needed for implementing specialized statistical models such as `lme4`, `lmerTest`, etc.
 
