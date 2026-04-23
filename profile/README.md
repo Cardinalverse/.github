@@ -39,9 +39,9 @@ It should avoid dependencies on any packages other than those above and core Bio
 
 `CardinalIO` is responsible for reading and writing file formats directly supported by the *Cardinalverse* (i.e., those we implement and maintain ourselves rather than depend on third-party packages or utilities). This is primarily **imzML**. Support for most other formats (such as **HDF5**, **zarr**, **SpatialData**, etc.) should use third-party packages for support.
 
-It should avoid dependencies on any packages other than `matter`, `ontologyIndex`, and core Bioconductor infrastructure.
-
 It includes compiled C/C++ code for efficiently parsing XML (via the vendored `pugixml` header-only C++ library).
+
+It should avoid dependencies on any packages other than `matter`, `ontologyIndex`, and core Bioconductor infrastructure.
 
 <!--
 
