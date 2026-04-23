@@ -2,7 +2,7 @@
 
 *__Cardinalverse__* is a Github organization for software and research in spatial molecular biology led by Prof. Kylie Ariel Bemis in collaboration with Olga Vitek Lab at the Khoury College of Computer Sciences at Northeastern University.
 
-The organization develops and maintains a collection of statistical software packages for spatial omics in the *__Cardinalverse__* ecosystem started by the *`Cardinal`* package. Originally released on Bioconductor in 2015 and winner of the 2015 John M. Chambers Statistical Software Award by the American Statistical Association (ASA), *`Cardinal`* provides analytical workflows for mass spectrometry imaging experiments.
+The organization develops and maintains a collection of statistical software packages for spatial omics in the *__Cardinalverse__* ecosystem started by the *`Cardinal`* package. Originally released on Bioconductor in 2015 and winner of the 2015 John M. Chambers Statistical Software Award by the American Statistical Association (ASA), *`Cardinal`* provides analytical workflows for mass spectrometry imaging (MSI) experiments.
 
 ## R Packages
 
@@ -18,6 +18,21 @@ flowchart BT
     Cardinal --> CardinalOmics
     CardinalStats --> CardinalOmics
 ```
+
+#### Cardinal
+
+This is the frontend for MSI-based workflows. It should be pure R for easy user installation from source (for providing release previews and hotfixes).
+
+It implements the classes most users will manipulate directly, including:
+
+- `MSImagingArrays` : unaligned mass spectra with pixel metadata
+- `MSImagingExperiment` : aligned mass spectra with pixel metadata and feature metadata
+- `PositionDataFrame` : data frame with required position and run metadata
+- `MassDataFrame` : data frame with required m/z metadata
+- `SpectraArrays` : spectra array lists or matrices
+
+It depends on `CardinalIO` for I/O, `CardinalCore` for spectral processing and visualization, and `CardinalStats` for statistical learning.
+
 
 <!--
 
