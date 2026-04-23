@@ -6,7 +6,7 @@ The organization develops and maintains a collection of statistical software pac
 
 ## R Packages
 
-We are currently in the process of refactoring *`Cardinal`* into an ecosystem of related packages. The primary goal is a stronger and more intuitive separation of responsibilities and dependencies compared to the current monolithic approach where all pre-processing, visualization, and statistical learning methods live in the *`Cardinal`* package. A secondary goal is to reduce the dependency (and tight coupling) with the backend *`matter`* package (which is currently used for various processing and iteration tasks in addition to its original stated purpose of handling out-of-memory arrays), which should make new code contributions more atomic and accessible.
+We are currently in the process of refactoring *`Cardinal`* into an ecosystem of related packages. The primary goal is a stronger and more intuitive separation of responsibilities and dependencies compared to the current monolithic approach where all pre-processing, visualization, and statistical learning methods live in the *`Cardinal`* package. A secondary goal is to reduce the dependency (and tight coupling) with the backend *`matter`* package (which is currently used for various processing and iteration tasks in addition to its original stated purpose of handling out-of-memory arrays), which should make new `Cardinal` code contributions more atomic and accessible.
 
 The vision for the *__Cardinalverse__* ecosystem is visualized in the graph below:
 
