@@ -43,6 +43,25 @@ It includes compiled C/C++ code for efficiently parsing XML (via the vendored `p
 
 It should avoid dependencies on any packages other than `matter`, `ontologyIndex`, and core Bioconductor infrastructure.
 
+#### CardinalCore
+
+`CardinalCore` is responsible for low-level processing and visualization tools. These tools are the building blocks of `Cardinal`'s processing and visualization. Many of these low-level tools have been implemented in `matter` to remove compiled C/C++ code from `Cardinal`. However, these tools really belong in a *Cardinalverse* package, so that `matter` can return to its original scope of domain-agonistic out-of-memory data structures.
+
+Examples of appropriate functionality for `CardinalCore` include low-level implementations of:
+
+- Normalization
+- Smoothing
+- Baseline removal
+- Peak detection and alignment
+- Contrast enhancement for images
+- Nearest neighbor searches
+- Range searches
+- Visualization
+
+It may include compiled C/C++ for these tasks. Any `Cardinal` functionality that may be tightly coupled with C/C++ code (but is __not__ directly related to statistical modeling or machine learning) should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
+
+It should avoid dependencies on any packages other than `matter`, `ggplot2`, and core Bioconductor infrastructure.
+
 <!--
 
 **Here are some ideas to get you started:**
