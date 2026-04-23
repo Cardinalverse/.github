@@ -4,6 +4,21 @@
 
 The organization develops and maintains a collection of statistical software packages for spatial omics in the *__Cardinalverse__* ecosystem started by the *`Cardinal`* package. Originally released on Bioconductor in 2015 and winner of the 2015 John M. Chambers Statistical Software Award by the American Statistical Association (ASA), *`Cardinal`* provides analytical workflows for mass spectrometry imaging experiments.
 
+## R Packages
+
+We are currently in the process of refactoring *`Cardinal`* into an ecosystem of related packages. The primary goal is a stronger and more intuitive separation of responsibilities and dependencies compared to the current monolithic approach where all pre-processing, visualization, and statistical learning methods live in the *`Cardinal`* package. A secondary goal is to reduce the dependency (and tight coupling) with the backend *`matter`* package (which is currently used for various processing and iteration tasks in addition to its original stated purpose of handling out-of-memory arrays).
+
+The vision for the *__Cardinalverse__* ecosystem is visualized in the graph below:
+
+```mermaid
+flowchart BT
+    CardinalIO --> Cardinal
+    CardinalCore --> Cardinal
+    CardinalStats --> Cardinal
+    Cardinal --> CardinalOmics
+    CardinalStats --> CardinalOmics
+```
+
 <!--
 
 **Here are some ideas to get you started:**
