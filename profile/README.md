@@ -21,7 +21,7 @@ flowchart BT
 
 #### Cardinal
 
-This is the frontend for MSI-based workflows. It should be pure R for easy user installation from source (for providing release previews and hotfixes).
+This package is the frontend for MSI-based workflows. It should be pure R for easy user installation from source (for providing release previews and hotfixes without requiring compilation).
 
 It implements the classes most users will manipulate directly, including:
 
