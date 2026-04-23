@@ -45,7 +45,7 @@ It should avoid dependencies on any packages other than `matter`, `ontologyIndex
 
 #### CardinalCore
 
-`CardinalCore` is responsible for low-level processing and visualization tools. These tools are the building blocks of `Cardinal`'s processing and visualization. Many of these low-level tools have been implemented in `matter` to remove compiled C/C++ code from `Cardinal`. However, these tools really belong in a *Cardinalverse* package, so that `matter` can return to its original scope of domain-agonistic out-of-memory data structures.
+`CardinalCore` is responsible for low-level processing and visualization tools. These tools are the building blocks of `Cardinal`'s processing and visualization. Many of these low-level tools (e.g., `findpeaks()` and `knnsearch()`) have been implemented in `matter` to remove compiled C/C++ code from `Cardinal`. However, these tools really belong in a *Cardinalverse* package, so that `matter` can return to its original scope of domain-agonistic out-of-memory data structures.
 
 Examples of appropriate functionality for `CardinalCore` include low-level implementations of:
 
@@ -61,6 +61,26 @@ Examples of appropriate functionality for `CardinalCore` include low-level imple
 It may include compiled C/C++ for these tasks. Any `Cardinal` functionality that may be tightly coupled with C/C++ code (but is __not__ directly related to statistical modeling or machine learning) should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
 
 It should avoid dependencies on any packages other than `matter`, `ggplot2`, and core Bioconductor infrastructure.
+
+#### CardinalStats
+
+`CardinalStats` is responsible for implementation of statistical modeling and machine learning for the *Cardinalverse* ecosystem. These implementations are the building blocks of the analytical workflows in `Cardinal`. Many of these low-level functions (e.g., `rowStats()` and `nscentroids()`) have been implemented in `matter` to remove compiled C/C++ code from `Cardinal`. However, these tools really belong in a *Cardinalverse* package, so that `matter` can return to its original scope of domain-agonistic out-of-memory data structures.
+
+Examples of appropriate functionality for `CardinalCore` include low-level implementations of:
+
+- Summary statistics
+- Dimension reduction
+- Segmentation/clustering
+- Classification
+- Regression
+- Statistical testing
+- Cross-validation
+
+It may include compiled C/C++ for these functions. Any `Cardinal` functionality directly implementing statistical modeling or machine learning *algorithms* should be implemented here instead of `Cardinal`. All functions implemented here should operate on basic R data structures (e.g., atomics, lists, and data frames) rather than `Cardinal` data structures.
+
+It may depend on other R packages for needed for implementing specialized statistical models such as `lme4`, `lmerTest`, etc.
+
+It should avoid dependencies without a history of sustained maintenance. It should avoid dependencies with system requirements.
 
 <!--
 
