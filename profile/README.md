@@ -14,6 +14,7 @@ The vision for the *__Cardinalverse__* ecosystem is visualized in the graph belo
 flowchart BT
     CardinalIO --> Cardinal
     CardinalCore --> Cardinal
+    CardinalCore --> CardinalStats
     CardinalStats --> Cardinal
     Cardinal --> CardinalOmics
     CardinalStats --> CardinalOmics
