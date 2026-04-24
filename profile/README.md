@@ -34,7 +34,7 @@ It implements the classes most users will manipulate directly, including:
 
 It depends on *CardinalIO* for I/O, *CardinalCore* for spectral processing and visualization, and *CardinalStats* for statistical learning.
 
-It should avoid dependencies on any packages other than those above and core Bioconductor infrastructure such as *S4Vectors*. It should avoid unnecessary dependencies on core Bioconductor infrastructure that is better handled by *CardinalOmics*.
+It should avoid dependencies on any packages other than those above and core Bioconductor infrastructure such as *S4Vectors*. It should avoid unnecessary dependencies on extended Bioconductor infrastructure that is better handled by *CardinalOmics*.
 
 #### CardinalIO
 
