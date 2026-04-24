@@ -91,7 +91,7 @@ It may depend on other R packages in the broader Bioconductor ecosystem to suppo
 
 #### matter
 
-The *matter* package (that currently serves as the computing backend for *Cardinal*) is notably missing from the above design. One of the major goals of refactoring *Cardinal* into the above ecosystem is so that *matter* can be simplified to become a replaceable backend for out-of-memory data.
+The *matter* package (that currently serves as the computing backend for *Cardinal*) is notably missing from the above design. A major goal of refactoring *Cardinal* is to simplify *matter* into a replaceable data backend.
 
 Simply stated: a *Cardinal* pipeline that never needs out-of-memory data processing should have no dependency on *matter* for its functionality. We will continue to rely on *matter* as a default backend for out-of-memory data processing, but it should be fully replaceable with other backends such as a `DelayedMatrix`, `HDF5Matrix`, or ordinary `matrix`.
 
