@@ -8,7 +8,7 @@ The organization develops and maintains a collection of statistical software pac
 
 We are currently in the process of refactoring *Cardinal* into an ecosystem of related packages. The primary goal is a stronger and more intuitive separation of responsibilities and dependencies compared to the current monolithic approach where all pre-processing, visualization, and statistical learning methods live in the *Cardinal* package. A secondary goal is to reduce the dependency (and tight coupling) with the backend *matter* package (which is currently used for various processing and iteration tasks in addition to its original stated purpose of handling out-of-memory arrays), which should make new *Cardinal* code contributions more atomic and accessible.
 
-The vision for the *__Cardinalverse__* ecosystem is visualized in the graph below:
+The proposed design for the *__Cardinalverse__* ecosystem is visualized in the graph below:
 
 ```mermaid
 flowchart BT
@@ -88,6 +88,12 @@ It should avoid dependencies without a history of sustained maintenance. It shou
 *CardinalOmics* will provide orchestration of multimodal experiments that integrate MSI data.
 
 It may depend on other R packages in the broader Bioconductor ecosystem to support spatial multi-omics. Any *Cardinalverse* workflows on multimodal experiments should be implemented here, including co-registration and methods for applying *CardinalStats* analyses to non-*Cardinal* data structures such as `SummarizedExperiment` and `SpatialExperiment`, etc.
+
+#### matter
+
+The *matter* package (that currently serves as the computing backend for *Cardinal*) is notably missing from the above design. One of the major goals of refactoring *Cardinal* into the above ecosystem is so that *matter* can be simplified to become a replaceable backend for out-of-memory data.
+
+Simply stated: a *Cardinal* pipeline that never needs out-of-memory data processing should have no dependency on *matter* for its functionality. We will continue to rely on *matter* as a default backend for out-of-memory data processing, but it should be fully replaceable with other backends such as a `DelayedMatrix`, `HDF5Matrix`, or ordinary `matrix`.
 
 <!--
 
